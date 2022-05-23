@@ -1,0 +1,38 @@
+﻿<Page x:Class="RegastrationOfTheWeddingOrganizer.Settings.ArchivePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:RegastrationOfTheWeddingOrganizer.Settings"
+      mc:Ignorable="d" 
+        d:DesignHeight="600" d:DesignWidth="900"
+      Title="ArchivePage" Background="#00BFFF" Foreground="#FF8000">
+
+    <Grid Loaded="WindowLoaded">
+        <Grid Loaded="WindowLoaded">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="259*"/>
+                <RowDefinition Height="8*"/>
+                <RowDefinition Height="16*"/>
+                <RowDefinition Height="9*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="12*"/>
+                <ColumnDefinition Width="225*"/>
+                <ColumnDefinition Width="12*"/>
+                <ColumnDefinition Width="191*"/>
+                <ColumnDefinition Width="12*"/>
+                <ColumnDefinition Width="223*"/>
+                <ColumnDefinition Width="12*"/>
+                <ColumnDefinition Width="202*"/>
+                <ColumnDefinition Width="12*"/>
+            </Grid.ColumnDefinitions>
+            <ListBox Background='#CC99FE' Foreground="#FF8000" Name="ListBox" SelectionChanged="ListBoxChanged" Grid.ColumnSpan="4" Margin="0,0,191,0"/>
+
+            <TextBox Background='#CC99FE' Foreground="#FF8000" Grid.Column="3" Grid.ColumnSpan="5" FontSize="16" x:Name="WeddingText" IsReadOnly="True"></TextBox>
+            <Button Background='#CC99FE' Foreground="#FF8000" FontSize="16" Content="Вернуть свадьбу" Grid.Row="2" Grid.Column="1" Click="Remove" Grid.ColumnSpan="2" />
+            <Button Background='#CC99FE' Foreground="#FF8000" FontSize="16" Content="Экспорт в Word" Grid.Column="4" Grid.Row="2" Click="Export" Grid.ColumnSpan="3" Margin="11,0,11,18" Grid.RowSpan="2"/>
+            <Button Background='#CC99FE' Foreground="#FF8000" FontSize="16" Content="Удалить выбранную" Grid.Column="6" Grid.Row="2" Grid.ColumnSpan="2" Height="33" Margin="11,0,0,0" VerticalAlignment="Center" Click="Delete" />
+        </Grid>
+    </Grid>
+</Page>

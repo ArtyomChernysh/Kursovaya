@@ -1,0 +1,39 @@
+﻿<Page x:Class="RegastrationOfTheWeddingOrganizer.Settings.ToastmasterPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:RegastrationOfTheWeddingOrganizer.Settings"
+      mc:Ignorable="d" 
+      d:DesignHeight="523" d:DesignWidth="723"
+      Title="ChefPage" Background="#00BFFF" Foreground="#FF8000">
+    <Grid>
+        <TabControl>
+            <TabItem Header="Добавление тамады" Background='#CC99FE' Foreground="#FF8000" >
+                <Grid Background="#00BFFF">
+                    <Label FontSize="20" Foreground="#FF8000" Content="Имя" HorizontalAlignment="Left" Margin="37,52,0,0" VerticalAlignment="Top"/>
+                    <Label FontSize="20" Foreground="#FF8000" Content="Цена" HorizontalAlignment="Left" Margin="33,0,0,0" VerticalAlignment="Center"/>
+                    <TextBox x:Name="NameBox" FontSize="20" Background='#CC99FE' Foreground="#FF8000"  HorizontalAlignment="Left" Margin="141,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="377"/>
+                    <TextBox x:Name="CostBox" FontSize="20" Background='#CC99FE' Foreground="#FF8000"  HorizontalAlignment="Left" Margin="141,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="377"/>
+                    <Button FontSize="20" Background='#CC99FE' Foreground="#FF8000"  Content="Ввод данных в БД" HorizontalAlignment="Left" Margin="516,410,0,0" VerticalAlignment="Top" Click="FillData"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Удаление тамады" Background='#CC99FE' Foreground="#FF8000" >
+                <Grid Background="#00BFFF">
+                    <ListView Name="list" Margin="0,0,0,48" Loaded="ListViewLoaded" Background='#CC99FE' Foreground="#FF8000">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn DisplayMemberBinding="{Binding Path=Id}">Id</GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding Path=Name}" Width="200">Имя</GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding Path=Cost}" Width="100">Цена</GridViewColumn>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <Button Background='#CC99FE' Foreground="#FF8000" Content="Удалить выбранную(-ые)" HorizontalAlignment="Left" Margin="10,414,0,0" VerticalAlignment="Top" Height="33" Width="189" Click="DeleteSelected" FontSize="16"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+
+    </Grid>
+</Page>

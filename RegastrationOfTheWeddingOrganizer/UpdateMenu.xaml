@@ -1,0 +1,102 @@
+﻿<Window x:Class="RegastrationOfTheWeddingOrganizer.UpdateMenu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RegastrationOfTheWeddingOrganizer"
+        mc:Ignorable="d"
+         Background="#00BFFF" Foreground="#FF8000" Title="UpdateMenu" Height="450" Width="800" Icon="C:\Users\Artem\Desktop\C#\RegastrationOfTheWeddingOrganizer\RegastrationOfTheWeddingOrganizer\bin\Debug\img\logo.gif">
+    <Grid Loaded="WindowLoaded">
+        <TabControl Background="#00BFFF" Foreground="#FF8000">
+            <TabItem Header="Начало">
+                <Grid  Background="#00BFFF">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Label Foreground="#FF8000" Content="Название свадьбы" HorizontalAlignment="Left" Margin="34,54,0,0" VerticalAlignment="Top"/>
+                    <Label Foreground="#FF8000" Content="Дата начала свадьбы" HorizontalAlignment="Left" Margin="34,122,0,0" VerticalAlignment="Top"/>
+                    <Label Foreground="#FF8000" Content="Дата конца свадьбы" HorizontalAlignment="Left" Margin="34,0,0,0" VerticalAlignment="Center"/>
+                    <TextBox Background='#CC99FE' Foreground="#FF8000" x:Name="WeddingNameBox" HorizontalAlignment="Left" Margin="229,58,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="WeddingNameBox_TextChanged"/>
+                    <DatePicker Background='#CC99FE' Foreground="#FF8000" SelectedDateFormat="Short" x:Name="WeddingStartBox" HorizontalAlignment="Left" Margin="229,124,0,0" Text="" VerticalAlignment="Top" Width="120" CalendarClosed="StartDateClosed" />
+                    <DatePicker Background='#CC99FE' Foreground="#FF8000" SelectedDateFormat="Short" x:Name="WeddingEndBox" HorizontalAlignment="Left" Margin="229,190,0,0" Text="" VerticalAlignment="Top" Width="120" CalendarClosed="EndDateClosed" />
+                    <Button Background='#CC99FE' Foreground="#FF8000" FontSize="16" Content="Назад" HorizontalAlignment="Left" Margin="10,341,0,0" VerticalAlignment="Top" Width="112" Click="OpenWeddingsMenu"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Жених">
+                <Grid  Background="#00BFFF">
+                    <ComboBox Background='#CC99FE' Foreground="#FF8000"  x:Name="MailHaircutBox" HorizontalAlignment="Left" Margin="99,70,0,0" VerticalAlignment="Top" Width="182" Grid.Column="1" DropDownClosed="NewMailHaircutCost"  />
+                    <ComboBox Background='#CC99FE' Foreground="#FF8000" x:Name="MailMakeupBox" HorizontalAlignment="Left" Margin="99,141,0,0" VerticalAlignment="Top" Width="182" Grid.Column="1"  DropDownClosed="NewMailMakeupCost" />
+                    <ComboBox Background='#CC99FE' Foreground="#FF8000" x:Name="MailSuitBox" HorizontalAlignment="Left" Margin="99,224,0,0" VerticalAlignment="Top" Width="182" Grid.Column="1" DropDownClosed="NewMailSuitCost" />
+                    <ComboBox Background='#CC99FE' Foreground="#FF8000" x:Name="MailRingBox" HorizontalAlignment="Left" Margin="99,307,0,0" VerticalAlignment="Top" Width="182" Grid.Column="1" DropDownClosed="NewMailRingCost" />
+                    <Label Foreground="#FF8000" Content="Стрижка" HorizontalAlignment="Left" Margin="7,68,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+                    <Label Foreground="#FF8000" Content="Макияж" HorizontalAlignment="Left" Margin="7,139,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+                    <Label Foreground="#FF8000" Content="Костюм" HorizontalAlignment="Left" Margin="10,222,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+                    <Label Foreground="#FF8000" Content="Кольцо" HorizontalAlignment="Left" Margin="10,303,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+                    <Label Foreground="#FF8000" Grid.Column="1" Content="Цена на стрижку: " HorizontalAlignment="Left" Margin="317,67,0,0" VerticalAlignment="Top"/>
+                    <Label Foreground="#FF8000" Grid.Column="1" Content="Цена на макияж: " HorizontalAlignment="Left" Margin="317,139,0,0" VerticalAlignment="Top"/>
+                    <Label Foreground="#FF8000" Content="Цена на костюм: " HorizontalAlignment="Left" Margin="317,222,0,0" VerticalAlignment="Top"/>
+                    <Label Foreground="#FF8000" Grid.Column="1" Content="Цена на кольцо: " HorizontalAlignment="Left" Margin="317,303,0,0" VerticalAlignment="Top"/>
+                    <Label Foreground="#FF8000" Grid.Column="1" x:Name="MaleHaircutCost" Content="0" HorizontalAlignment="Left" Margin="415,67,0,0" VerticalAlignment="Top"/>
+                    <Label Foreground="#FF8000" x:Name="MaleMakeupCost"  Content="0" HorizontalAlignment="Left" Margin="415,139,0,0" VerticalAlignment="Top"/>
+                    <Label Foreground="#FF8000" Grid.Column="1" x:Name="MaleSuitCost" Content="0" HorizontalAlignment="Left" Margin="415,222,0,0" VerticalAlignment="Top"/>
+                    <Label Foreground="#FF8000" Grid.Column="1" x:Name="MaleRingCost" Content="0" HorizontalAlignment="Left" Margin="415,303,0,0" VerticalAlignment="Top"/>
+                    <Button Background='#CC99FE' Foreground="#FF8000" FontSize="16" Content="Назад" HorizontalAlignment="Left" Margin="10,341,0,0" VerticalAlignment="Top" Width="112" Click="OpenWeddingsMenu"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Невеста">
+                <Grid  Background="#00BFFF">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <ComboBox Background='#CC99FE' Foreground="#FF8000" x:Name="FemailHaircutBox" HorizontalAlignment="Left" Margin="99,70,0,0" VerticalAlignment="Top" Width="182"  DropDownClosed="NewFemailHaircutCost"/>
+                    <ComboBox Background='#CC99FE' Foreground="#FF8000" x:Name="FemailMakeupBox" HorizontalAlignment="Left" Margin="99,141,0,0" VerticalAlignment="Top" Width="182"  DropDownClosed="NewFemailMakeupCost"/>
+                    <ComboBox Background='#CC99FE' Foreground="#FF8000" x:Name="FemailSuitBox" HorizontalAlignment="Left" Margin="99,224,0,0" VerticalAlignment="Top" Width="182" DropDownClosed="NewFemailSuitCost" />
+                    <ComboBox Background='#CC99FE' Foreground="#FF8000" x:Name="FemailRingBox" HorizontalAlignment="Left" Margin="99,307,0,0" VerticalAlignment="Top" Width="182" DropDownClosed="NewFemailRingCost" />
+                    <Label Foreground="#FF8000" Content="Стрижка" HorizontalAlignment="Left" Margin="6,68,0,0" VerticalAlignment="Top"/>
+                    <Label Foreground="#FF8000" Content="Макияж" HorizontalAlignment="Left" Margin="8,139,0,0" VerticalAlignment="Top"/>
+                    <Label Foreground="#FF8000" Content="Костюм" HorizontalAlignment="Left" Margin="10,224,0,0" VerticalAlignment="Top"/>
+                    <Label Foreground="#FF8000" Content="Кольцо" HorizontalAlignment="Left" Margin="10,307,0,0" VerticalAlignment="Top"/>
+                    <Label Foreground="#FF8000" Content="Цена на стрижку: " HorizontalAlignment="Left" Margin="317,67,0,0" VerticalAlignment="Top"/>
+                    <Label Foreground="#FF8000" Content="Цена на макияж: " HorizontalAlignment="Left" Margin="317,139,0,0" VerticalAlignment="Top"/>
+                    <Label Foreground="#FF8000" Content="Цена на костюм: " HorizontalAlignment="Left" Margin="317,222,0,0" VerticalAlignment="Top"/>
+                    <Label Foreground="#FF8000" Content="Цена на кольцо: " HorizontalAlignment="Left" Margin="317,303,0,0" VerticalAlignment="Top"/>
+                    <Label Foreground="#FF8000" x:Name="FemaleHaircutCost" Content="0" HorizontalAlignment="Left" Margin="415,67,0,0" VerticalAlignment="Top"/>
+                    <Label Foreground="#FF8000" x:Name="FemaleMakeupCost"  Content="0" HorizontalAlignment="Left" Margin="415,139,0,0" VerticalAlignment="Top"/>
+                    <Label Foreground="#FF8000" x:Name="FemaleSuitCost" Content="0" HorizontalAlignment="Left" Margin="415,222,0,0" VerticalAlignment="Top"/>
+                    <Label Foreground="#FF8000" x:Name="FemaleRingCost" Content="0" HorizontalAlignment="Left" Margin="415,303,0,0" VerticalAlignment="Top"/>
+                    <Button Background='#CC99FE' Foreground="#FF8000" FontSize="16" Content="Назад" HorizontalAlignment="Left" Margin="10,341,0,0" VerticalAlignment="Top" Width="112" Click="OpenWeddingsMenu"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Развлечения">
+                <Grid  Background="#00BFFF">
+                    <Label Foreground="#FF8000" Content="Тамада" HorizontalAlignment="Left" Margin="34,55,0,0" VerticalAlignment="Top"/>
+                    <Label Foreground="#FF8000" Content="Шеф-повар" HorizontalAlignment="Left" Margin="34,124,0,0" VerticalAlignment="Top"/>
+                    <Label Foreground="#FF8000" Content="Диджей" HorizontalAlignment="Left" Margin="34,198,0,0" VerticalAlignment="Top"/>
+                    <ComboBox Background='#CC99FE' Foreground="#FF8000" x:Name="EntertainmentToastmasterBox" HorizontalAlignment="Left" Margin="157,58,0,0" Text="" VerticalAlignment="Top" Width="120" Grid.Column="1" DropDownClosed="NewToastmasterCost" />
+                    <ComboBox Background='#CC99FE' Foreground="#FF8000" x:Name="EntertainmentChefBox" HorizontalAlignment="Left" Margin="157,126,0,0" Text="" VerticalAlignment="Top" Width="120" Grid.Column="1" DropDownClosed="NewChefCost"/>
+                    <ComboBox Background='#CC99FE' Foreground="#FF8000" x:Name="EntertainmentDJBox" HorizontalAlignment="Left" Margin="157,198,0,0" Text="" VerticalAlignment="Top" Width="120" Grid.Column="1"  DropDownClosed="NewDJCost"/>
+                    <Label Foreground="#FF8000" Content="Цена на тамаду: " HorizontalAlignment="Left" Margin="285,57,0,0" VerticalAlignment="Top"/>
+                    <Label Foreground="#FF8000" Content="Цена на повара: " HorizontalAlignment="Left" Margin="285,125,0,0" VerticalAlignment="Top"/>
+                    <Label Foreground="#FF8000" Content="Цена на диджея: " HorizontalAlignment="Left" Margin="285,196,0,0" VerticalAlignment="Top"/>
+                    <Label Foreground="#FF8000" x:Name="ToastmasterCost" Content="0" HorizontalAlignment="Left" Margin="382,58,0,0" VerticalAlignment="Top"/>
+                    <Label Foreground="#FF8000" x:Name="ChefCost"  Content="0" HorizontalAlignment="Left" Margin="379,126,0,0" VerticalAlignment="Top"/>
+                    <Label Foreground="#FF8000" x:Name="DJCost" Content="0" HorizontalAlignment="Left" Margin="378,197,0,0" VerticalAlignment="Top"/>
+                    <Button Background='#CC99FE' Foreground="#FF8000" FontSize="16" Content="Назад" HorizontalAlignment="Left" Margin="10,341,0,0" VerticalAlignment="Top" Width="112" Click="OpenWeddingsMenu"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Банкет">
+                <Grid  Background="#00BFFF">
+                    <Label Foreground="#FF8000" Content="Количество еды на человека" HorizontalAlignment="Left" Margin="34,54,0,0" VerticalAlignment="Top"/>
+                    <Label Foreground="#FF8000" Content="Количество гостей" HorizontalAlignment="Left" Margin="34,122,0,0" VerticalAlignment="Top"/>
+                    <Label Foreground="#FF8000" Content="Цена за еду" HorizontalAlignment="Left" Margin="34,0,0,0" VerticalAlignment="Center"/>
+                    <ComboBox Background='#CC99FE' Foreground="#FF8000" x:Name="WeddingFoodQualityBox" HorizontalAlignment="Left" Margin="229,58,0,0" Text="" VerticalAlignment="Top" Width="120"  DropDownClosed="WeddingFoodQualityBox_DropDownClosed" >
+                    </ComboBox>
+                    <TextBox Background='#CC99FE' Foreground="#FF8000" x:Name="WeddingGuestNumberBox" HorizontalAlignment="Left" Margin="229,126,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"  TextChanged="WeddingGuestNumberBox_TextChanged"/>
+                    <Label x:Name="WeddingFoodCostBox" Foreground="#FF8000" Content="0" HorizontalAlignment="Left" Margin="229,0,0,0" VerticalAlignment="Center" Width="120"/>
+                    <Button Background='#CC99FE' Foreground="#FF8000" FontSize="16" Content="Назад" HorizontalAlignment="Left" Margin="10,341,0,0" VerticalAlignment="Top" Width="112" Click="OpenWeddingsMenu"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
